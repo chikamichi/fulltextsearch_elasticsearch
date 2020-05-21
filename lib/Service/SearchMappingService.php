@@ -255,13 +255,13 @@ class SearchMappingService {
 
 		$query = $queryWords = [];
 		foreach ($queryContents as $queryContent) {
-			$queryWords[$queryContent->getShould()][] =
+			$queryWords[$queryContent->getShould()] =
 				$this->generateQueryContentFields($request, $queryContent);
 		}
 
 		$listShould = array_keys($queryWords);
 		foreach ($listShould as $itemShould) {
-			$query[$itemShould][] = $queryWords[$itemShould];
+			$query[$itemShould] = $queryWords[$itemShould];
 		}
 
 		return ['bool' => $query];
