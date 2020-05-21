@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.5.2
+
+- fix for Elasticsearch v7.7.0: invalid nested arrays in queries
+
 ### 1.5.1
 
 - more log during search request
